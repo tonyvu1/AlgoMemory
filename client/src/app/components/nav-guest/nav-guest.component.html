@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    *ngIf="isHandset"
+  >
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
+  <mat-toolbar color="primary">
+    <span class="fill-remaining-space"></span>
+
+    <button mat-button onClick="window.open('//github.com/tonyvu1')">
+      <i
+        class="fab fa-github"
+        [ngStyle]="{
+          fontSize: '2.5rem',
+          marginRight: '.5rem',
+          paddingBottom: '.4rem'
+        }"
+      >
+      </i>
+      Github
+    </button>
+
+    <button mat-button onClick="window.open('//linkedin.com/in/tonyvu1/')">
+      <i
+        class="fab fa-linkedin"
+        [ngStyle]="{
+          fontSize: '2.5rem',
+          marginRight: '.5rem',
+          paddingBottom: '.4rem'
+        }"
+      >
+      </i>
+      LinkedIn
+    </button>
+  </mat-toolbar>
+</mat-toolbar>

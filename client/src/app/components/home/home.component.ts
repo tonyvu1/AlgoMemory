@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Globals } from "../globals";
-import { UserDataService } from "../services/user-data.service";
-import { User } from "../models/user";
+import { Globals } from "../../globals";
+import { UserDataService } from "../../services/user-data.service";
+import { User } from "../../models/user";
 
 @Component({
   selector: "app-home",
@@ -17,10 +17,13 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("hi");
-    console.log(this._userDS.getUsers().subscribe(data => {
+    this.consoleLogUsers();
+  }
+
+  consoleLogUsers() {
+    this._userDS.getUsers().subscribe(data => {
       this.usersList = data;
       console.log(this.usersList);
-    }));
+    });
   }
 }
