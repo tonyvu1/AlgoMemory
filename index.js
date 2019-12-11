@@ -25,7 +25,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-const usersRouter = require("./routes/users");
+const usersRouter = require("./server/routes/users");
 app.use("/users", usersRouter);
 
 

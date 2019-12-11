@@ -8,8 +8,8 @@ POST http://localhost:5000/users/add
 Content-Type: application/json
 
 {
-    "email": "tony@gmail.com",
+    "email": "bobby@gmail.com",
     "password": "password",
-    "firstName": "Tony",
-    "lastName": "Blue"
+    "firstName": "Bobby",
+    "lastName": "Ray"
 }
