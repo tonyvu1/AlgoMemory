@@ -19,7 +19,7 @@ export class NavGuestComponent implements OnInit {
 
   ngOnInit() {
     this.breakpointObserver
-      .observe(["(min-width: 600px)"])
+      .observe(["(min-width: 970px)"])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.isHandset = false;

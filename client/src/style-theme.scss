@@ -1,5 +1,6 @@
 @import "~@angular/material/theming";
 @include mat-core();
+$hoverColor: #859bb0;
 
 $style-theme-primary: mat-palette($mat-indigo);
 
@@ -15,6 +16,10 @@ $style-theme: mat-light-theme(
 
 .mat-menu-item span{
   font-family: 'Lato', sans-serif;
+}
+
+.mat-menu-item:hover {
+  color: $hoverColor;
 }
 
 @include angular-material-theme($style-theme);

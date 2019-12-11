@@ -3,165 +3,97 @@
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button
-    *ngIf="isHandset"
     class="menu"
   >
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
 
-  <div
+  <a class="handsetHeader" href="" *ngIf="isHandset">
+    <h2>Lynx</h2>
+    <h5 class="sub-header">Resort</h5>
+  </a>
+  <span class="fill-remaining-space" *ngIf="isHandset"></span>
+  <button
+    mat-button
     [matMenuTriggerFor]="menuRooms"
-    #menuRoomsTrigger="matMenuTrigger"
-    (mouseover)="menuRoomsTrigger.openMenu()"
     class="nav-link"
+    *ngIf="!isHandset"
   >
     ROOMS
-  </div>
-  <mat-menu #menuRooms="matMenu" [overlapTrigger]="false">
-    <span (mouseleave)="menuRoomsTrigger.closeMenu()">
-      <button mat-menu-item>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <span>Connecting</span>
-      </button>
-      <button mat-menu-item>
-        <span>Let's talk</span>
-      </button>
-      <button mat-menu-item>
-        <span>Logout</span>
-      </button>
-    </span>
+  </button>
+  <mat-menu #menuRooms="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
   </mat-menu>
 
-  <div
+  <button
+    mat-button
     [matMenuTriggerFor]="menuDining"
-    #menuDiningTrigger="matMenuTrigger"
-    (mouseover)="menuDiningTrigger.openMenu()"
     class="nav-link"
+    *ngIf="!isHandset"
   >
     DINING
-  </div>
-  <mat-menu #menuDining="matMenu" [overlapTrigger]="false">
-    <span (mouseleave)="menuDiningTrigger.closeMenu()">
-      <button mat-menu-item>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <span>Connecting</span>
-      </button>
-      <button mat-menu-item>
-        <span>Let's talk</span>
-      </button>
-      <button mat-menu-item>
-        <span>Logout</span>
-      </button>
-    </span>
+  </button>
+  <mat-menu #menuDining="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
   </mat-menu>
 
-  <div
+  <button
+    mat-button
     [matMenuTriggerFor]="menuGatherings"
-    #menuGatheringsTrigger="matMenuTrigger"
-    (mouseover)="menuGatheringsTrigger.openMenu()"
     class="nav-link"
+    *ngIf="!isHandset"
   >
     GATHERINGS
-  </div>
-  <mat-menu #menuGatherings="matMenu" [overlapTrigger]="false">
-    <span (mouseleave)="menuGatheringsTrigger.closeMenu()">
-      <button mat-menu-item>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <span>Connecting</span>
-      </button>
-      <button mat-menu-item>
-        <span>Let's talk</span>
-      </button>
-      <button mat-menu-item>
-        <span>Logout</span>
-      </button>
-    </span>
+  </button>
+  <mat-menu #menuGatherings="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
   </mat-menu>
 
-  <a class="header" href="">
+  <a class="header" href="" *ngIf="!isHandset">
     <h2>Lynx</h2>
-    <h5 class="sub-header">Minneapolis</h5>
+    <h5 class="sub-header">Resort</h5>
   </a>
 
-  <div
+  <button
+    mat-button
     [matMenuTriggerFor]="menuWellness"
-    #menuWellnessTrigger="matMenuTrigger"
-    (mouseover)="menuWellnessTrigger.openMenu()"
     class="nav-link"
+    *ngIf="!isHandset"
   >
     WELLNESS
-  </div>
-  <mat-menu #menuWellness="matMenu" [overlapTrigger]="false">
-    <span (mouseleave)="menuWellnessTrigger.closeMenu()">
-      <button mat-menu-item>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <span>Connecting</span>
-      </button>
-      <button mat-menu-item>
-        <span>Let's talk</span>
-      </button>
-      <button mat-menu-item>
-        <span>Logout</span>
-      </button>
-    </span>
+  </button>
+  <mat-menu #menuWellness="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
   </mat-menu>
 
-  <div
+  <button
+    mat-button
     [matMenuTriggerFor]="menuGallery"
-    #menuGalleryTrigger="matMenuTrigger"
-    (mouseover)="menuGalleryTrigger.openMenu()"
     class="nav-link"
+    *ngIf="!isHandset"
   >
     GALLERY
-  </div>
-  <mat-menu #menuGallery="matMenu" [overlapTrigger]="false">
-    <span (mouseleave)="menuGalleryTrigger.closeMenu()">
-      <button mat-menu-item>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <span>Connecting</span>
-      </button>
-      <button mat-menu-item>
-        <span>Let's talk</span>
-      </button>
-      <button mat-menu-item>
-        <span>Logout</span>
-      </button>
-    </span>
+  </button>
+  <mat-menu #menuGallery="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
   </mat-menu>
 
-  <div
+  <button
+    mat-button
     [matMenuTriggerFor]="menuDiscover"
-    #menuDiscoverTrigger="matMenuTrigger"
-    (mouseover)="menuDiscoverTrigger.openMenu()"
     class="nav-link"
+    *ngIf="!isHandset"
   >
     DISCOVER
-  </div>
-  <mat-menu #menuDiscover="matMenu" [overlapTrigger]="false">
-    <span (mouseleave)="menuDiscoverTrigger.closeMenu()">
-      <button mat-menu-item>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <span>Connecting</span>
-      </button>
-      <button mat-menu-item>
-        <span>Let's talk</span>
-      </button>
-      <button mat-menu-item>
-        <span>Logout</span>
-      </button>
-    </span>
+  </button>
+  <mat-menu #menuDiscover="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
   </mat-menu>
 
   <div class="reserve-btn">

@@ -8,6 +8,10 @@ $hoverColor: #859bb0;
   color: black;
 }
 
+.nav-link:hover {
+    color: $hoverColor;
+}
+
 .nav-bar {
   justify-content: center;
   background: white;
@@ -16,6 +20,7 @@ $hoverColor: #859bb0;
 .menu {
   position: absolute;
   left: 1rem;
+  color: black;
 }
 
 button {
@@ -36,6 +41,18 @@ button {
   }
 }
 
+.handsetHeader {
+    text-align: center;
+    margin: 5rem;
+    text-decoration: none;
+
+    h2 {
+      font-family: "Gelasio", serif;
+      font-size: 2.1rem;
+      color: black;
+      margin-top: 0.6rem;
+    }
+  }
 .sub-header {
   margin-top: -1.2rem;
   font-size: 1.15rem;
@@ -63,3 +80,7 @@ button {
     border: 1px solid $hoverColor;
     color: $hoverColor;
 }
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+  }
