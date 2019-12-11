@@ -1,40 +1,170 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="nav-bar">
   <button
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button
     *ngIf="isHandset"
+    class="menu"
   >
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
 
-  <mat-toolbar color="primary">
-    <span class="fill-remaining-space"></span>
+  <div
+    [matMenuTriggerFor]="menuRooms"
+    #menuRoomsTrigger="matMenuTrigger"
+    (mouseover)="menuRoomsTrigger.openMenu()"
+    class="nav-link"
+  >
+    ROOMS
+  </div>
+  <mat-menu #menuRooms="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuRoomsTrigger.closeMenu()">
+      <button mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
 
-    <button mat-button onClick="window.open('//github.com/tonyvu1')">
-      <i
-        class="fab fa-github"
-        [ngStyle]="{
-          fontSize: '2.5rem',
-          marginRight: '.5rem',
-          paddingBottom: '.4rem'
-        }"
-      >
-      </i>
-      Github
-    </button>
+  <div
+    [matMenuTriggerFor]="menuDining"
+    #menuDiningTrigger="matMenuTrigger"
+    (mouseover)="menuDiningTrigger.openMenu()"
+    class="nav-link"
+  >
+    DINING
+  </div>
+  <mat-menu #menuDining="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuDiningTrigger.closeMenu()">
+      <button mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
 
-    <button mat-button onClick="window.open('//linkedin.com/in/tonyvu1/')">
-      <i
-        class="fab fa-linkedin"
-        [ngStyle]="{
-          fontSize: '2.5rem',
-          marginRight: '.5rem',
-          paddingBottom: '.4rem'
-        }"
-      >
-      </i>
-      LinkedIn
-    </button>
-  </mat-toolbar>
+  <div
+    [matMenuTriggerFor]="menuGatherings"
+    #menuGatheringsTrigger="matMenuTrigger"
+    (mouseover)="menuGatheringsTrigger.openMenu()"
+    class="nav-link"
+  >
+    GATHERINGS
+  </div>
+  <mat-menu #menuGatherings="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuGatheringsTrigger.closeMenu()">
+      <button mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
+
+  <a class="header" href="">
+    <h2>Lynx</h2>
+    <h5 class="sub-header">Minneapolis</h5>
+  </a>
+
+  <div
+    [matMenuTriggerFor]="menuWellness"
+    #menuWellnessTrigger="matMenuTrigger"
+    (mouseover)="menuWellnessTrigger.openMenu()"
+    class="nav-link"
+  >
+    WELLNESS
+  </div>
+  <mat-menu #menuWellness="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuWellnessTrigger.closeMenu()">
+      <button mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
+
+  <div
+    [matMenuTriggerFor]="menuGallery"
+    #menuGalleryTrigger="matMenuTrigger"
+    (mouseover)="menuGalleryTrigger.openMenu()"
+    class="nav-link"
+  >
+    GALLERY
+  </div>
+  <mat-menu #menuGallery="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuGalleryTrigger.closeMenu()">
+      <button mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
+
+  <div
+    [matMenuTriggerFor]="menuDiscover"
+    #menuDiscoverTrigger="matMenuTrigger"
+    (mouseover)="menuDiscoverTrigger.openMenu()"
+    class="nav-link"
+  >
+    DISCOVER
+  </div>
+  <mat-menu #menuDiscover="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuDiscoverTrigger.closeMenu()">
+      <button mat-menu-item>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <span>Let's talk</span>
+      </button>
+      <button mat-menu-item>
+        <span>Logout</span>
+      </button>
+    </span>
+  </mat-menu>
+
+  <div class="reserve-btn">
+    RESERVE
+  </div>
 </mat-toolbar>

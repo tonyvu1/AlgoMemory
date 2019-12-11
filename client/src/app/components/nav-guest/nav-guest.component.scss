@@ -1,0 +1,65 @@
+$hoverColor: #859bb0;
+
+.nav-link {
+  font-size: small;
+  font-family: "Lato", sans-serif;
+  width: 112px;
+  text-align: center;
+  color: black;
+}
+
+.nav-bar {
+  justify-content: center;
+  background: white;
+}
+
+.menu {
+  position: absolute;
+  left: 1rem;
+}
+
+button {
+  text-align: center;
+}
+
+.header {
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 1rem;
+  text-decoration: none;
+
+  h2 {
+    font-family: "Gelasio", serif;
+    font-size: 2.1rem;
+    color: black;
+    margin-top: 0.6rem;
+  }
+}
+
+.sub-header {
+  margin-top: -1.2rem;
+  font-size: 1.15rem;
+  font-family: "Gelasio", serif;
+  letter-spacing: 0.1rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.reserve-btn {
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  width: auto;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  padding: 0 1rem;
+  position: absolute;
+  right: 2rem;
+
+  border: 1px solid black;
+}
+
+.reserve-btn:hover {
+    cursor: pointer;
+    border: 1px solid $hoverColor;
+    color: $hoverColor;
+}
