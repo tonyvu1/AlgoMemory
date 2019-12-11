@@ -1,6 +1,6 @@
-const router = require("express");
+const router = require("express").Router();
 
-let User = require("./models/User");
+let User = require("../models/User");
 
 router.route("/").get((req, res) => {
   User.find()
@@ -10,10 +10,11 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const email = req.body.email;
+  const password = req.body.password;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
 
-  const newUser = User({ email, firstName, lastName });
+  const newUser = User({ email, password, firstName, lastName });
 
   newUser
     .save()
