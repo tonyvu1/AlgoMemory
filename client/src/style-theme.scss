@@ -1,10 +1,9 @@
 @import "~@angular/material/theming";
 @include mat-core();
-$hoverColor: #859bb0;
 
-$style-theme-primary: mat-palette($mat-indigo);
+$style-theme-primary: mat-palette($mat-purple);
 
-$style-theme-accent: mat-palette($mat-pink, A200, A100, A400);
+$style-theme-accent: mat-palette($mat-grey, A200, A100, A400);
 
 $style-theme-warn: mat-palette($mat-red);
 
@@ -14,12 +13,16 @@ $style-theme: mat-light-theme(
   $style-theme-warn
 );
 
-.mat-menu-item span{
-  font-family: 'Lato', sans-serif;
+.mat-drawer-inner-container {
+  background-color: #fafafa;
 }
 
-.mat-menu-item:hover {
-  color: $hoverColor;
+.mat-menu-content {
+  width: 200px;
+}
+
+.mat-drawer-inner-container {
+  background: #eee;
 }
 
 @include angular-material-theme($style-theme);

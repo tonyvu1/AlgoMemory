@@ -9,11 +9,10 @@ import { User } from "../../models/user";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  globals: Globals;
   usersList: User[] = [];
 
   constructor(globals: Globals, private _userDS: UserDataService) {
-    this.globals = globals;
+    globals.title = "DS&ALGO";
   }
 
   ngOnInit() {

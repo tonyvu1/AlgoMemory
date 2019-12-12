@@ -13,18 +13,9 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  firstName: {
-    type: String,
-    required: true
-  },
-  lastName: {
-    type: String,
-    required: true
-  },
-  role: {
-    type: String,
-    required: true,
-    default: "Guest"
+  points: {
+    type: Number,
+    default: 0
   },
   dateCreated: {
     type: Date,
