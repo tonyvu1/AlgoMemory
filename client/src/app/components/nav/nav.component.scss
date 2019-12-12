@@ -1,8 +1,28 @@
 .logo {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
 }
+
+.navbar {
+  -webkit-box-shadow: -4px 4px 33px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 4px 33px -8px rgba(0,0,0,0.75);
+box-shadow: -4px 4px 33px -8px rgba(0,0,0,0.75);
+
+  border-radius: 0%;
+  height: fit-content;
+}
+
+
 
 .fill-remaining-space {
   flex: 1 1 auto;
+}
+
+.header-toolbar{
+  padding: 4rem 1.6rem;
+
+}
+
+.header {
+  font-weight: 100;
 }

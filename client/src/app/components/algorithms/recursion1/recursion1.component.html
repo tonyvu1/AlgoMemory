@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row" [ngStyle]="{marginTop: '2rem'}">
+    <textarea
+      matInput
+      placeholder="Code"
+      class="col-sm-12 col-md-5 workspace"
+      [(ngModel)]="words"
+    ></textarea>
+    <div class="col-md-2">
+        <button mat-raised-button color="accent" class="btn">Start</button>
+    </div>
+    <div class="col-md-5 solution">
+      <p class="promise">
+        <span class="var-new-function-arrow">var</span>
+        <span class="grey"> proficiencies</span> = <br />
+        <span class="orange"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".BDognoM dna ,IU lairetaM ,partstooB
+          ,sserpxE ,ralugnA ,tpircSepyT ,tpircSavaJ ni tneiciforp m'I"</span
+        >;
+        <br />
+        <br />
+        <span class="var-new-function-arrow">function</span>
+        <span class="green"> reverse</span>
+        <span class="purple">(</span>
+        <span class="grey">str</span>
+        <span class="purple">) </span><span class="grey">&#123;</span><br />
+        <span class="purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span>
+        <span class="purple"> (</span><span class="grey">str</span> ===
+        <span class="orange">""</span><span class="purple">)</span>
+        <span class="purple"> &#123;</span><br />
+        <span class="purple"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</span
+        >;<br />
+        <span class="purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span
+        ><span class="purple"> else</span><span class="purple"> &#123;</span
+        ><br />
+        <span class="purple"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</span
+        >
+        <span class="green"> reverse</span><span class="purple">(</span>
+        <span class="grey">str</span><span class="data">.substring</span>
+        <span class="green">(</span><span class="grey">1</span
+        ><span class="green">)<span class="purple">)</span></span> +
+
+        <span class="grey">str</span><span class="data">.charAt</span>
+        <span class="purple">(</span><span class="grey">0</span
+        ><span class="purple">)</span>;<br />
+        <span class="purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br />
+        <span class="grey">}</span><br /><br />
+        <span class="then">console</span>.log<span class="purple">(</span>
+        <span class="green">reverse</span><span class="green">(</span>
+        <span class="grey">proficiencies</span><span class="green">)</span>
+        <span class="purple">)</span>; <br /><br />
+      </p>
+    </div>
+  </div>
+</div>

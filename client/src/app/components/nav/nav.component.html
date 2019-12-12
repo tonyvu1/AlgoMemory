@@ -1,33 +1,41 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="navbar" color="primary">
+  <button mat-button [matMenuTriggerFor]="dataStructures">
+    Data Structures
+  </button>
+
+  <mat-menu #dataStructures="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="arrays">Arrays</button>
+  </mat-menu>
+
+  <mat-menu #arrays="matMenu">
+    <button mat-menu-item>Insects</button>
+    <button mat-menu-item>Molluscs</button>
+    <button mat-menu-item>Crustaceans</button>
+    <button mat-menu-item>Corals</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="algorithms">
+    Algorithms
+  </button>
+
+  <mat-menu #algorithms="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="recursion">Recursion</button>
+  </mat-menu>
+
+  <mat-menu #recursion="matMenu">
+    <button mat-menu-item routerLink="recursion1">Problem 1</button>
+    <button mat-menu-item>Molluscs</button>
+    <button mat-menu-item>Crustaceans</button>
+    <button mat-menu-item>Corals</button>
+  </mat-menu>
+
+  <span class="fill-remaining-space"></span>
+
+  <a class="logo" href="">Memorize</a>
+</mat-toolbar>
+
+<mat-toolbar class="header-toolbar" color="primary">
   <mat-toolbar color="primary">
-    
-    <button mat-button onClick="window.open('//github.com/tonyvu1')">
-      <i
-        class="fab fa-github"
-        [ngStyle]="{
-          fontSize: '2.5rem',
-          marginRight: '.5rem',
-          paddingBottom: '.4rem'
-        }"
-      >
-      </i>
-      Github
-    </button>
-
-    <button mat-button onClick="window.open('//linkedin.com/in/tonyvu1/')">
-      <i
-        class="fab fa-linkedin"
-        [ngStyle]="{
-          fontSize: '2.5rem',
-          marginRight: '.5rem',
-          paddingBottom: '.4rem'
-        }"
-      >
-      </i>
-      LinkedIn
-    </button>
-    <span class="fill-remaining-space"></span>
-
-    <a class="logo" href="">{{ globals.title }}</a>
+    <h1 class="header" href="">{{ globals.title }}</h1>
   </mat-toolbar>
 </mat-toolbar>
