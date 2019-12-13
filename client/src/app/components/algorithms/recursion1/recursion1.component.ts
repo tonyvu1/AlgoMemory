@@ -8,22 +8,42 @@ import { Globals } from "../../../globals";
 })
 export class Recursion1Component implements OnInit {
   running: boolean = false;
-  answer: string = "";
-  solution: string = "";
+  checkPressed: boolean = false;
   isCorrect: boolean;
-  test: string = "";
+  answerNoSpaces: string = "";
+  answer: string = "";
+
+  // Change solution based on problem
+  solution: string =
+    'functionreverse(str){if(str===""){return;}else{returnreverse(str.substring(1))+strcharAt(0);}}';
+  
+  
+  
+
 
   constructor(globals: Globals) {
-    globals.title = "Recursion Problem 1";
+    globals.title = "Recursion: Problem 1";
   }
 
   ngOnInit() {}
 
+  reset() {
+    this.answer = "";
+    this.checkPressed = false;
+    this.isCorrect = false;
+  }
+
   compare() {
+    this.checkPressed = true;
     var numOfSpaces = 0;
     var temp = "";
     var str = this.answer;
-    var ar = str.split("");
+    var ar = [];
+
+    // Reset answerNoSpaces
+    this.answerNoSpaces = "";
+
+    ar = str.split("");
 
     // Bubble sort algorithm to move all spaces to end of array
     for (var i = 0; i < ar.length; i++) {
@@ -46,14 +66,20 @@ export class Recursion1Component implements OnInit {
       ar.pop();
     }
 
-    console.log(ar);
+    for (var i = 0; i < ar.length; i++) {
+      this.answerNoSpaces += ar[i];
+    }
 
-    /* if(this.answer === this.solution) {
+    if (this.answerNoSpaces === this.solution) {
       this.isCorrect = true;
     } else {
       this.isCorrect = false;
-    } */
-  }
+    }
+
+    console.log(ar);
+    console.log(this.answerNoSpaces);
+
+  } // end compare()
 
   runStyle() {
     let runStyle = {

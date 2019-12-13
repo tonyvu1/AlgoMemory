@@ -29,6 +29,8 @@
   border: 1px solid rgb(92, 92, 92);
 
   margin-bottom: 1rem;
+
+  z-index: 5;
 }
 
 textarea.answer:focus {
@@ -63,7 +65,10 @@ textarea.answer:focus {
     visibility: hidden;
   }
   
+ 
 
-  .test {
+
+  .outcome {
       color: white;
+      text-align: center;
   }
