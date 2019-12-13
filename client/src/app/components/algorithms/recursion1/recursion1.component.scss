@@ -1,24 +1,69 @@
 .container {
-    width: 90%;
+  width: 90%;
 }
 
-.test {
-    color: white;
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(160, 160, 160);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(160, 160, 160);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(160, 160, 160);
+}
+
+.answer {
+  background: #eee;
+  padding: 2rem;
+  height: 80vh;
+  caret-color: white;
+  color: white;
+  background-color: #262626;
+  resize: none;
+  border: 1px solid rgb(92, 92, 92);
+
+  margin-bottom: 1rem;
+}
+
+textarea.answer:focus {
+  outline-width: 0;
 }
 
 .solution {
-    height: 80vh;
-    padding: 2rem;
-    border: 1px solid rgb(169, 169, 169);
+  height: 80vh;
+  padding: 2rem;
+  border: 1px solid rgb(92, 92, 92);
+  background-color: #262626;
+  color: white;
 }
 
-.workspace {
-    background: #eee;
-    padding: 2rem;
-    height: 80vh;
+.start-btn {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.btn {
+.submit-btn {
     width: 100%;
-}
+    margin-bottom: 1rem;
+    background-color: lightblue;
+    color: rgb(0, 0, 0);
+  }
 
+  .on {
+    visibility: visible;
+  }
+  
+  .off {
+    visibility: hidden;
+  }
+  
+
+  .test {
+      color: white;
+  }

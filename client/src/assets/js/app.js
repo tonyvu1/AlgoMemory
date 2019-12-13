@@ -1,4 +1,4 @@
-$(document).delegate('.workspace', 'keydown', function(e) {
+$(document).delegate('.answer', 'keydown', function(e) {
     var keyCode = e.keyCode || e.which;
   
     if (keyCode == 9) {

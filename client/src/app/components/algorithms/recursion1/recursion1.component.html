@@ -1,14 +1,28 @@
 <div class="container">
-  <div class="row" [ngStyle]="{marginTop: '2rem'}">
+  <div class="row" [ngStyle]="{ marginTop: '2rem' }">
     <textarea
-      matInput
-      placeholder="Code"
-      class="col-sm-12 col-md-5 workspace"
-      [(ngModel)]="words"
+      placeholder="Type code here..."
+      class="col-xs-12 col-sm-12 col-md-5 answer"
+      [(ngModel)]="answer"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
     ></textarea>
+
+
+
+
     <div class="col-md-2">
-        <button mat-raised-button color="accent" class="btn">Start</button>
+      <button mat-raised-button color="accent" class="start-btn" (click)="compare()">Start</button>
+      <button mat-raised-button color="accent" class="submit-btn">Reset</button>
+      <h1 class="test">asdf</h1>
     </div>
+
+
+
+
+
     <div class="col-md-5 solution">
       <p class="promise">
         <span class="var-new-function-arrow">var</span>
