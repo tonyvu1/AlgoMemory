@@ -16,3 +16,5 @@ $(document).delegate('.answer', 'keydown', function(e) {
       this.selectionEnd = start + 1;
     }
   });
+
+  

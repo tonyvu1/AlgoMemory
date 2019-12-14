@@ -19,13 +19,16 @@
       >
         Start
       </button>
-      <button mat-raised-button color="accent" class="submit-btn" (click)="reset()">Reset</button>
-
+      <button
+        mat-raised-button
+        color="warn"
+        class="reset-btn"
+        (click)="reset()"
+      >
+        Reset
+      </button>
 
       <ng-template [ngIf]="checkPressed" [ngIfElse]="notPressed">
-
-
-
         <ng-template [ngIf]="isCorrect" [ngIfElse]="notCorrect">
           <h1 class="outcome">CORRECT</h1>
         </ng-template>
@@ -33,21 +36,9 @@
         <ng-template #notCorrect>
           <h1 class="outcome">WRONG</h1>
         </ng-template>
-
-
-
       </ng-template>
 
-
-
-
-      <ng-template #notPressed>  
-        
-      </ng-template>
-
-
-      
-
+      <ng-template #notPressed> </ng-template>
     </div>
 
     <div class="col-md-5 solution">
@@ -63,4 +54,7 @@
       </p>
     </div>
   </div>
+
+
+  
 </div>
