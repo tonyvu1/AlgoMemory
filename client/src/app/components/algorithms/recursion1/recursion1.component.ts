@@ -1,17 +1,42 @@
 import { Component, OnInit } from "@angular/core";
 import { Globals } from "../../../globals";
+import { trigger, transition, animate, style } from "@angular/animations";
 
 @Component({
   selector: "app-recursion1",
   templateUrl: "./recursion1.component.html",
-  styleUrls: ["./recursion1.component.scss"]
+  styleUrls: ["./recursion1.component.scss"],
+  animations: [
+    trigger("hide", [
+      transition(":enter", [
+        style({ opacity: "0" }),
+        animate("200ms linear", style({ opacity: "1" }))
+      ]),
+      transition(":leave", [
+        animate("200ms linear", style({ opacity: "0" }))
+      ])
+    ])
+  ]
 })
 export class Recursion1Component implements OnInit {
   running: boolean = false;
-  checkPressed: boolean = false;
-  isCorrect: boolean;
+  outcome: string ="";
   answerNoSpaces: string = "";
   answer: string = "";
+  checked: boolean = false;
+  counter: number;
+  minutes: number = 0;
+  seconds: number = 0;
+  timerRef;
+
+
+
+
+
+
+
+
+
 
   // Change solution based on problem
   solution: string =
@@ -27,14 +52,67 @@ export class Recursion1Component implements OnInit {
 
   ngOnInit() {}
 
-  reset() {
-    this.answer = "";
-    this.checkPressed = false;
-    this.isCorrect = false;
+
+
+
+  showTime() {
+    this.seconds = this.counter % 60;
+    this.minutes = Math.floor(this.counter / 60);
   }
 
+  startTimer() {
+    if (this.running) {
+      const startTime = Math.floor(new Date().getTime() / 1000) - (this.counter || 0);
+      this.timerRef = setInterval(() => {
+        this.counter =  Math.floor(new Date().getTime() / 1000) - startTime;
+      });
+    } else {
+      clearInterval(this.timerRef);
+    }
+  }
+
+  clearTimer() {
+    this.running = false;
+
+    this.counter = undefined;
+    clearInterval(this.timerRef);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timerRef);
+  }
+
+
+
+
+
+
+
+
+
+
+  start() {
+    this.running = !this.running;
+    this.startTimer(); 
+    
+
+    if(this.checked) {
+      this.checked = false;
+    }
+  }
+
+  check() {
+    this.running = !this.running;
+    this.compare();
+    this.checked = true;
+    this.showTime()
+  }
+
+  refresh(): void {
+    window.location.reload();
+}
+
   compare() {
-    this.checkPressed = true;
     var numOfSpaces = 0;
     var temp = "";
     var str = this.answer;
@@ -71,9 +149,9 @@ export class Recursion1Component implements OnInit {
     }
 
     if (this.answerNoSpaces === this.solution) {
-      this.isCorrect = true;
+      this.outcome = "CORRECT";
     } else {
-      this.isCorrect = false;
+      this.outcome = "WRONG";
     }
 
     console.log(ar);
@@ -81,11 +159,20 @@ export class Recursion1Component implements OnInit {
 
   } // end compare()
 
-  runStyle() {
-    let runStyle = {
-      on: this.running === true,
-      off: this.running === false
-    };
-    return runStyle;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

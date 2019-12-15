@@ -1,5 +1,21 @@
-<p [ngStyle]="{ color: 'white' }">stopwatch works!</p>
-<h1 [ngStyle]="{ color: 'white' }">{{ counter }} {{ counter }}</h1>
-<button mat-raised-button color="accent" (click)="startTimer()">
-  {{ startText }}
-</button>
+<div class="container">
+  <p [ngStyle]="{ color: 'white' }">stopwatch works!</p>
+  <h1 [ngStyle]="{ color: 'white' }">{{ counter }}</h1>
+  <button mat-raised-button color="accent" (click)="startTimer()">
+    {{ startText }}
+  </button>
+  
+  <br/>
+  <br/>
+  <button mat-raised-button color="accent" (click)="reset()">
+    CLEAR
+  </button>
+  <br/>
+  <br/>
+  <button mat-raised-button color="accent" (click)="showTime()">
+    SHOW
+  </button>
+  <h1 [ngStyle]="{ color: 'white' }">minutes: {{ minutes }}</h1>
+  <h1 [ngStyle]="{ color: 'white' }">seconds: {{ seconds }}</h1>
+
+</div>

@@ -10,48 +10,157 @@
       spellcheck="false"
     ></textarea>
 
-    <div class="col-md-2">
-      <button
+    <div class="col-md-2 ">
+
+
+
+
+      <ng-template [ngIf]="running" [ngIfElse]="notRunning">
+
+
+          <button
+          mat-raised-button
+          color="accent"
+          class="check-btn"
+          (click)="check()"
+        >
+          Check
+        </button>
+
+
+      </ng-template>
+
+      <ng-template #notRunning>
+        <button
         mat-raised-button
         color="accent"
         class="start-btn"
-        (click)="compare()"
+        (click)="start()"
       >
         Start
       </button>
+
+      </ng-template>
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <button
         mat-raised-button
         color="warn"
         class="reset-btn"
-        (click)="reset()"
+        (click)="refresh()"
+        *ngIf="!running"
+        [@hide]
       >
         Reset
       </button>
 
-      <ng-template [ngIf]="checkPressed" [ngIfElse]="notPressed">
-        <ng-template [ngIf]="isCorrect" [ngIfElse]="notCorrect">
-          <h1 class="outcome">CORRECT</h1>
-        </ng-template>
 
-        <ng-template #notCorrect>
-          <h1 class="outcome">WRONG</h1>
-        </ng-template>
+
+
+
+
+
+
+
+      <ng-template [ngIf]="!checked" [ngIfElse]="notChecked">
+        <div class="summary">
+  
+        </div>
+  
+  
       </ng-template>
+  
+      <ng-template #notChecked>
+        <div class="summary">
+          <p [ngStyle]="{textDecoration: 'underline'}">Outcome:</p>
+          <h1 class="outcome">{{outcome}}</h1>
+          <br/>
+          <p [ngStyle]="{textDecoration: 'underline'}">Elapsed time:</p>
+          <h1 class="outcome"><span>{{minutes < 10 ? '0' : ''}}{{minutes}}:{{seconds < 10 ? '0' : ''}}{{seconds}}</span></h1>
+        </div>
+  
+  
+      </ng-template>
+  
+  
+  
 
-      <ng-template #notPressed> </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     <div class="col-md-5 solution">
-      <p class="promise">
-        function reverse (str) &#123;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (str === "") &#123;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else &#123;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
-        reverse( str.substring (1)) + strcharAt (0);<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-        }<br /><br />
-      </p>
+      
+
+
+      <!-- Place custom code here-->
+      <div *ngIf="!running" [@hide]>
+        <p>
+          function reverse (str) &#123;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (str === "") &#123;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else &#123;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          reverse( str.substring (1)) + strcharAt (0);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+        </p>
+      </div>
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 

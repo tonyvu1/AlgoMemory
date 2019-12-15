@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StopwatchComponent implements OnInit {
   counter: number;
-  split: number;
+  minutes: number = 0;
+  seconds: number = 0;
   timerRef;
   running: boolean = false;
   startText = 'Start';
@@ -17,16 +18,21 @@ export class StopwatchComponent implements OnInit {
    }
 
   ngOnInit() {  
-    this.split = this.counter;
+  
+  }
+
+  showTime() {
+    this.seconds = this.counter % 5;
+    this.minutes = Math.floor(this.counter / 5);
   }
 
   startTimer() {
     this.running = !this.running;
     if (this.running) {
       this.startText = 'Stop';
-      const startTime = Date.now() - (this.counter || 0);
+      const startTime = Math.floor(new Date().getTime() / 1000) - (this.counter || 0);
       this.timerRef = setInterval(() => {
-        this.counter = Date.now() - startTime;
+        this.counter =  Math.floor(new Date().getTime() / 1000) - startTime;
       });
     } else {
       this.startText = 'Resume';
@@ -43,5 +49,10 @@ export class StopwatchComponent implements OnInit {
 
   ngOnDestroy() {
     clearInterval(this.timerRef);
+  }
+
+  reset() {
+    this.clearTimer();
+    this.startTimer();
   }
 }
