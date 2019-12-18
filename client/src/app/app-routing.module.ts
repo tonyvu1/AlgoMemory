@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
-import { Recursion1Component } from "./components/algorithms/recursion1/recursion1.component";
+import { StringReversalComponent } from "./components/algorithms/string-reversal/string-reversal.component";
+import { BubbleSortComponent } from "./components/algorithms/bubble-sort/bubble-sort.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "recursion1", component: Recursion1Component }
+  { path: "string-reversal", component: StringReversalComponent },
+  { path: "bubble-sort", component: BubbleSortComponent }
 ];
 
 @NgModule({

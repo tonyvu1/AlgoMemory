@@ -8,10 +8,8 @@
   </mat-menu>
 
   <mat-menu #arrays="matMenu">
-    <button mat-menu-item>Insects</button>
-    <button mat-menu-item>Molluscs</button>
-    <button mat-menu-item>Crustaceans</button>
-    <button mat-menu-item>Corals</button>
+    <button mat-menu-item>Stacks</button>
+    <button mat-menu-item>Queues</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="algorithms">
@@ -19,14 +17,16 @@
   </button>
 
   <mat-menu #algorithms="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="sorting">Sorting</button>
     <button mat-menu-item [matMenuTriggerFor]="recursion">Recursion</button>
   </mat-menu>
 
   <mat-menu #recursion="matMenu">
-    <button mat-menu-item routerLink="recursion1">Problem 1</button>
-    <button mat-menu-item>Molluscs</button>
-    <button mat-menu-item>Crustaceans</button>
-    <button mat-menu-item>Corals</button>
+    <button mat-menu-item routerLink="string-reversal">String Reversal</button>
+  </mat-menu>
+
+  <mat-menu #sorting="matMenu">
+    <button mat-menu-item routerLink="bubble-sort">Bubble Sort</button>
   </mat-menu>
 
   <span class="fill-remaining-space"></span>

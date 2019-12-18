@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Recursion1Component } from './recursion1.component';
+import { StringReversalComponent } from './string-reversal.component';
 
 describe('Recursion1Component', () => {
-  let component: Recursion1Component;
-  let fixture: ComponentFixture<Recursion1Component>;
+  let component: StringReversalComponent;
+  let fixture: ComponentFixture<StringReversalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Recursion1Component ]
+      declarations: [ StringReversalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Recursion1Component);
+    fixture = TestBed.createComponent(StringReversalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
