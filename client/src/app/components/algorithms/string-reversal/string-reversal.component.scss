@@ -31,6 +31,9 @@
   margin-bottom: 1rem;
   margin-right: 15px;
   z-index: 5;
+
+  letter-spacing: 0.1rem;
+  font-family: "Nunito", sans-serif;
 }
 
 textarea.answer:focus {
@@ -45,7 +48,10 @@ textarea.answer:focus {
   color: white;
   width: 100%;
   overflow-y: scroll;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
+
+  letter-spacing: 0.1rem;
+  font-family: "Nunito", sans-serif;
 }
 
 .start-btn {
@@ -75,7 +81,7 @@ textarea.answer:focus {
   position: absolute;
   left: 0;
   width: 49%;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   color: rgb(255, 255, 255);
 }
 
@@ -93,7 +99,6 @@ textarea.answer:focus {
 
 .summary {
   color: white;
- 
 }
 
 .problem {

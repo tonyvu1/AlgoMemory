@@ -29,7 +29,7 @@ export class BubbleSortComponent implements OnInit {
 
   // Change solution based on problem
   solution: string =
-    'functionreverse(str){if(str===""){return;}else{returnreverse(str.substring(1))+strcharAt(0);}}';
+    'functionsort(arr){for(vari=0;i<arr.length;i++){for(varj=0;j<arr.length-1;j++){if(arr[j]>arr[j+1]){vartemp=arr[j];arr[j]=arr[j+1];arr[j+1]=temp;}}}}';
 
   constructor(globals: Globals) {
     globals.title = "Recursion";

@@ -31,6 +31,9 @@
     margin-bottom: 1rem;
     margin-right: 15px;
     z-index: 5;
+
+    letter-spacing: .1rem;
+    font-family: 'Nunito', sans-serif;
   }
   
   textarea.answer:focus {
@@ -46,6 +49,7 @@
     width: 100%;
     overflow-y: scroll;
     letter-spacing: .1rem;
+    font-family: 'Nunito', sans-serif;
   }
   
   .start-btn {
