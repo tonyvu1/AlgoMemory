@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   usersList: User[] = [];
 
   constructor(globals: Globals, private _userDS: UserDataService) {
-    globals.title = "DSALGO";
+    globals.title = "";
   }
 
   ngOnInit() {

@@ -1,7 +1,14 @@
 <div class="container">
+
+
   <div class="row" [ngStyle]="{ marginTop: '2rem' }">
-    <textarea
-      placeholder="Write a recursive algorithm to reverse a string..."
+    <div class="col-xs-12 col-sm-12 col-md-1"></div>
+    
+    
+
+    <ng-template [ngIf]="running" [ngIfElse]="readOnlyText">
+      <textarea
+      placeholder="Type code..."
       class="col-xs-12 col-sm-12 col-md-5 answer"
       [(ngModel)]="answer"
       autocomplete="off"
@@ -10,70 +17,128 @@
       spellcheck="false"
     ></textarea>
 
-    <div class="col-md-2 ">
+    </ng-template>
+
+    <ng-template #readOnlyText>
+      
+      <textarea
+      placeholder="Press Start..."
+      class="col-xs-12 col-sm-12 col-md-5 answer"
+      [(ngModel)]="answer"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+      readonly="true"
+    ></textarea>
+
+    </ng-template>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-xs-12 col-sm-12 col-md-5 control-panel">
+      <div class="solution">
+        <!-- Place custom code here-->
+        <div *ngIf="!running" [@hide]>
+          <p>
+            function reverse (str) &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (str === "") &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+            reverse( str.substring (1)) + strcharAt (0);<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            }<br /><br />
+          </p>
+        </div>
+      </div>
+
+
+
+
+      
+      <div class="header">
+        <h1 class="outcome">Recursion</h1>
+        <p class="problem">
+          Problem 1: Write a recursive algorithm to reverse a string.
+        </p>
+      </div>
+
+      <ng-template [ngIf]="!checked" [ngIfElse]="notChecked">
+        <div class="summary">
+          <p [ngStyle]="{ textDecoration: 'underline' }">Outcome</p>
+          <br />
+          <p [ngStyle]="{ textDecoration: 'underline' }">Elapsed Time</p>
+        </div>
+      </ng-template>
+
+      <ng-template #notChecked>
+        <div class="summary">
+          <p [ngStyle]="{ textDecoration: 'underline' }">Outcome</p>
+          <p class="outcome">{{ outcome }}</p>
+          <br />
+          <p [ngStyle]="{ textDecoration: 'underline' }">Elapsed Time</p>
+          <h1 class="outcome">
+            <span
+              >{{ minutes < 10 ? "0" : "" }}{{ minutes }}:{{
+                seconds < 10 ? "0" : ""
+              }}{{ seconds }}</span
+            >
+          </h1>
+        </div>
+      </ng-template>
 
 
       <ng-template [ngIf]="running" [ngIfElse]="notRunning">
-
-
-          <button
+        <button
           mat-raised-button
           color="accent"
           class="check-btn"
           (click)="check()"
         >
-          Check
+          Show Answer
         </button>
-
-
       </ng-template>
 
       <ng-template #notRunning>
+        
         <button
-        mat-raised-button
-        color="accent"
-        class="start-btn"
-        (click)="start()"
-      >
-        Start
-      </button>
-
+          mat-raised-button
+          color="accent"
+          class="start-btn"
+          (click)="start()"
+        >
+          Start
+        </button>
       </ng-template>
 
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <button
+      <div class="reset-next-btns">
+        <button
         mat-raised-button
         color="warn"
         class="reset-btn"
@@ -84,86 +149,28 @@
         Reset
       </button>
 
-
-
-
-
-
-
-
-
-      <ng-template [ngIf]="!checked" [ngIfElse]="notChecked">
-        <div class="summary">
-  
-        </div>
-  
-  
-      </ng-template>
-  
-      <ng-template #notChecked>
-        <div class="summary">
-          <p [ngStyle]="{textDecoration: 'underline'}">Outcome:</p>
-          <h1 class="outcome">{{outcome}}</h1>
-          <br/>
-          <p [ngStyle]="{textDecoration: 'underline'}">Elapsed time:</p>
-          <h1 class="outcome"><span>{{minutes < 10 ? '0' : ''}}{{minutes}}:{{seconds < 10 ? '0' : ''}}{{seconds}}</span></h1>
-        </div>
-  
-  
-      </ng-template>
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    <div class="col-md-5 solution">
-      
-
-
-      <!-- Place custom code here-->
-      <div *ngIf="!running" [@hide]>
-        <p>
-          function reverse (str) &#123;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (str === "") &#123;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else &#123;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
-          reverse( str.substring (1)) + strcharAt (0);<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-          }<br /><br />
-        </p>
+      <button
+        mat-raised-button
+        color="accent"
+        class="next-btn"
+        (click)="refresh()"
+        *ngIf="!running"
+        [@hide]
+      >
+        Next
+      </button>
       </div>
 
-
-
-
-
-
-
-
+     
 
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-1"></div>
+
   </div>
 
 
-  
+
+
+
+
 </div>

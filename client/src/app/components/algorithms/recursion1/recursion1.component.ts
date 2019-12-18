@@ -47,7 +47,7 @@ export class Recursion1Component implements OnInit {
 
 
   constructor(globals: Globals) {
-    globals.title = "Recursion: Problem 1";
+    globals.title = "Recursion";
   }
 
   ngOnInit() {}
@@ -103,6 +103,7 @@ export class Recursion1Component implements OnInit {
 
   check() {
     this.running = !this.running;
+    this.startTimer(); 
     this.compare();
     this.checked = true;
     this.showTime()
