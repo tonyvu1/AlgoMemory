@@ -29,7 +29,7 @@ export class StringReversalComponent implements OnInit {
 
   // Change solution based on problem
   solution: string =
-    'functionreverse(str){if(str===""){return;}else{returnreverse(str.substring(1))+str.charAt(0);}}';
+    'functionreverse(str){if(str===""){return;}else{returnreverse(str.substring(1))+strcharAt(0);}}';
 
   constructor(globals: Globals) {
     globals.title = "Recursion";
