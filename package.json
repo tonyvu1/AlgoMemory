@@ -1,7 +1,7 @@
 {
-  "name": "hotel",
+  "name": "binari",
   "version": "1.0.0",
-  "description": "This is an e-commerce website for a hotel made on the MEAN stack. ",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",

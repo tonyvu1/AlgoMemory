@@ -30,7 +30,7 @@ app.use("/users", usersRouter);
 
 /***************************** HANDLE PRODUCTION *******************************/
 app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname + "/dist/<name-of-app>/index.html"));
+  res.sendFile(path.join(__dirname + "client/dist/index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
