@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Globals } from "../../globals";
-import { UserDataService } from "../../services/user-data.service";
 import { User } from "../../models/user";
 
 @Component({
@@ -11,18 +10,12 @@ import { User } from "../../models/user";
 export class HomeComponent implements OnInit {
   usersList: User[] = [];
 
-  constructor(globals: Globals, private _userDS: UserDataService) {
+  constructor(globals: Globals) {
     globals.title = "";
   }
 
   ngOnInit() {
-    this.consoleLogUsers();
+
   }
 
-  consoleLogUsers() {
-    this._userDS.getUsers().subscribe(data => {
-      this.usersList = data;
-      console.log(this.usersList);
-    });
-  }
 }
