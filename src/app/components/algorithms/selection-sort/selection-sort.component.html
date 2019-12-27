@@ -1,0 +1,157 @@
+<div class="container">
+    <div class="row" [ngStyle]="{ marginTop: '2rem' }">
+      <div class="col-xs-12 col-sm-12 col-md-1"></div>
+  
+      <ng-template [ngIf]="running" [ngIfElse]="readOnlyText">
+        <textarea
+          placeholder="Type code..."
+          class="col-xs-12 col-sm-12 col-md-5 answer"
+          [(ngModel)]="answer"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        ></textarea>
+      </ng-template>
+  
+      <ng-template #readOnlyText>
+        <textarea
+          placeholder="Press start to begin..."
+          class="col-xs-12 col-sm-12 col-md-5 answer"
+          [(ngModel)]="answer"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          readonly="true"
+        ></textarea>
+      </ng-template>
+  
+      <div class="col-xs-12 col-sm-12 col-md-5 control-panel">
+        <div class="solution">
+          <!-- Place custom code here-->
+          <div *ngIf="!running" [@hide]>
+            <p>
+                function sort(arr) &#123;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var selected;<br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i < arr.length - 1; i++) &#123;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selected = i;<br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var min = arr[selected];<br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var j = i; j < arr.length - 1; j++) &#123;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (min > arr[j + 1]) &#123;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                min = arr[j + 1];<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                selected = j + 1;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+
+
+
+
+
+
+              function sort(arr) &#123;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i < arr.length; i++)
+              &#123;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var
+              j = 0; j < arr.length - 1; j++) &#123;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+              (arr[j] > arr[j + 1]) &#123;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var
+              temp = arr[j];<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j]
+              = arr[j + 1];<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j
+              + 1] = temp;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />}
+            </p>
+          </div>
+        </div>
+  
+        <div class="header">
+          <h1 class="outcome">Selection Sort</h1>
+          <p class="problem">
+            Bubble Sort O(n^2) <br>
+            Objective: Write a selection sort algorithm to arrange elements in an
+            array from smallest to largest.
+          </p>
+        </div>
+  
+        <ng-template [ngIf]="!checked" [ngIfElse]="notChecked">
+          <div class="summary">
+            <p [ngStyle]="{ textDecoration: 'underline' }">Outcome</p>
+            <p class="outcome">&nbsp;</p>
+            <br />
+            <p [ngStyle]="{ textDecoration: 'underline' }">Elapsed Time</p>
+          </div>
+        </ng-template>
+  
+        <ng-template #notChecked>
+          <div class="summary">
+            <p [ngStyle]="{ textDecoration: 'underline' }">Outcome</p>
+            <p class="outcome">{{ outcome }}</p>
+            <br />
+            <p [ngStyle]="{ textDecoration: 'underline' }">Elapsed Time</p>
+            <h1 class="outcome">
+              <span
+                >{{ minutes < 10 ? "0" : "" }}{{ minutes }}:{{
+                  seconds < 10 ? "0" : ""
+                }}{{ seconds }}</span
+              >
+            </h1>
+          </div>
+        </ng-template>
+  
+        <ng-template [ngIf]="running" [ngIfElse]="notRunning">
+          <button
+            mat-raised-button
+            color="accent"
+            class="check-btn"
+            (click)="check()"
+          >
+            Show Answer
+          </button>
+        </ng-template>
+  
+        <ng-template #notRunning>
+          <button
+            mat-raised-button
+            color="accent"
+            class="start-btn"
+            (click)="start()"
+          >
+            Start
+          </button>
+        </ng-template>
+  
+        <div class="reset-next-btns">
+          <button
+            mat-raised-button
+            color="warn"
+            class="reset-btn"
+            (click)="reset()"
+            *ngIf="!running"
+            [@hide]
+          >
+            Reset
+          </button>
+  
+          <button
+            mat-raised-button
+            color="accent"
+            class="next-btn"
+            (click)="refresh()"
+            *ngIf="!running"
+            [@hide]
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-1"></div>
+    </div>
+  </div>
+  

@@ -23,9 +23,10 @@ import { MatListModule } from "@angular/material/list";
 import { StringReversalComponent } from './components/algorithms/string-reversal/string-reversal.component';
 import { StopwatchComponent } from './components/stopwatch/stopwatch.component';
 import { BubbleSortComponent } from './components/algorithms/bubble-sort/bubble-sort.component';
+import { SelectionSortComponent } from './components/algorithms/selection-sort/selection-sort.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavComponent, StringReversalComponent, StopwatchComponent, BubbleSortComponent],
+  declarations: [AppComponent, HomeComponent, NavComponent, StringReversalComponent, StopwatchComponent, BubbleSortComponent, SelectionSortComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
