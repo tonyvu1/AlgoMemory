@@ -18,6 +18,7 @@ export class NavComponent {
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.handSetState = false;
+          this.panelState = false;
         } else {
           this.handSetState = true;
         }
