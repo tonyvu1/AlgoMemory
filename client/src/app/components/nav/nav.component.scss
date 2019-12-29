@@ -1,6 +1,9 @@
+.container {
+  position: relative;
+}
+
 .logo {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  position: absolute;
 }
 
 .navbar {
@@ -29,4 +32,8 @@
   text-align: center;
   justify-content: center;
 
+}
+
+.nav-btn:hover {
+  background-color: #303030;
 }

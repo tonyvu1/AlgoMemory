@@ -1,42 +1,60 @@
 <mat-toolbar class="navbar" color="primary">
-  <button mat-button [matMenuTriggerFor]="dataStructures">
-    Data Structures
-  </button>
+  <div class="container">
+    <button mat-button [ngStyle]="{ fontSize: '2.5rem' }" class="logo" routerLink="">
+      BINARI
+    </button>
 
-  <mat-menu #dataStructures="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="arrays">Arrays</button>
-  </mat-menu>
+    <button
+      mat-button
+      [matMenuTriggerFor]="dataStructures"
+      class="nav-btn"
+      [ngStyle]="{ marginLeft: '11rem' }"
+    >
+      Data Structures
+      <i
+        class="fas fa-sort-down"
+        [ngStyle]="{ marginBottom: '.6rem', marginLeft: '.6rem' }"
+      ></i>
+    </button>
 
-  <mat-menu #arrays="matMenu">
-    <button mat-menu-item>Stacks</button>
-    <button mat-menu-item>Queues</button>
-  </mat-menu>
+    <mat-menu #dataStructures="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="arrays">Arrays</button>
+    </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="algorithms">
-    Algorithms
-  </button>
+    <mat-menu #arrays="matMenu">
+      <button mat-menu-item>Stacks</button>
+      <button mat-menu-item>Queues</button>
+    </mat-menu>
 
-  <mat-menu #algorithms="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="sorting">Sorting</button>
-    <button mat-menu-item [matMenuTriggerFor]="recursion">Recursion</button>
-  </mat-menu>
+    <button mat-button [matMenuTriggerFor]="algorithms" class="nav-btn">
+      Algorithms
+      <i
+        class="fas fa-sort-down"
+        [ngStyle]="{ marginBottom: '.6rem', marginLeft: '.6rem' }"
+      ></i>
+    </button>
 
-  <mat-menu #recursion="matMenu">
-    <button mat-menu-item routerLink="string-reversal">String Reversal</button>
-  </mat-menu>
+    <mat-menu #algorithms="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="sorting">Sorting</button>
+      <button mat-menu-item [matMenuTriggerFor]="recursion">Recursion</button>
+    </mat-menu>
 
-  <mat-menu #sorting="matMenu">
-    <button mat-menu-item routerLink="bubble-sort">Bubble Sort</button>
-    <button mat-menu-item routerLink="selection-sort">Selection Sort</button>
-  </mat-menu>
+    <mat-menu #recursion="matMenu">
+      <button mat-menu-item routerLink="string-reversal">
+        String Reversal
+      </button>
+    </mat-menu>
 
-  <span class="fill-remaining-space"></span>
+    <mat-menu #sorting="matMenu">
+      <button mat-menu-item routerLink="bubble-sort">Bubble Sort</button>
+      <button mat-menu-item routerLink="selection-sort">Selection Sort</button>
+    </mat-menu>
 
-  <a class="logo" href="">BINARI</a>
+    <span class="fill-remaining-space"></span>
+  </div>
 </mat-toolbar>
 
-<mat-toolbar class="header-toolbar" >
-  <mat-toolbar color="primary" [ngStyle]="{backgroundColor: '#303030'}">
-
+<mat-toolbar class="header-toolbar">
+  <mat-toolbar color="primary" [ngStyle]="{ backgroundColor: '#303030' }">
   </mat-toolbar>
 </mat-toolbar>
