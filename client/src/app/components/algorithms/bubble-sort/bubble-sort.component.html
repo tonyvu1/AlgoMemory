@@ -41,7 +41,7 @@
           <p [ngStyle]="{ textDecoration: 'underline' }">Outcome</p>
           <p class="outcome">&nbsp;</p>
           <br />
-          <p [ngStyle]="{ textDecoration: 'underline' }">Elapsed Time</p>
+          <p [ngStyle]="{ textDecoration: 'underline' }">Elapsed Time</p><br/>
         </div>
       </ng-template>
 
@@ -90,7 +90,6 @@
           class="reset-btn"
           (click)="reset()"
           *ngIf="!running"
-          [@hide]
         >
           Reset
         </button>
@@ -101,7 +100,6 @@
           class="next-btn"
           (click)="refresh()"
           *ngIf="!running"
-          [@hide]
         >
           Next
         </button>
