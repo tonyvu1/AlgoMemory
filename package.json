@@ -2,22 +2,21 @@
   "name": "binari",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index",
-    "server": "nodemon server.js",
-    "dev": "npm run server"
+    "start": "node app",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tonyvu1/hotel.git"
+    "url": "git+https://github.com/tonyvu1/binari.git"
   },
   "author": "Tony Vu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tonyvu1/hotel/issues"
+    "url": "https://github.com/tonyvu1/binari/issues"
   },
-  "homepage": "https://github.com/tonyvu1/hotel#readme",
+  "homepage": "https://github.com/tonyvu1/binari#readme",
   "dependencies": {
     "axios": "^0.19.0",
     "concurrently": "^5.0.2",
