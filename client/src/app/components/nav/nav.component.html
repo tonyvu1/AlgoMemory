@@ -13,6 +13,7 @@
     [ngStyle]="{ fontSize: '2.5rem' }"
     routerLink=""
     *ngIf="handSetState"
+    (click)="panelState = false"
   >
     BINARI
   </button>
@@ -90,6 +91,7 @@
     routerLink="profile"
     class="profile nav-btn"
     *ngIf="handSetState"
+    (click)="panelState = false"
   >
     <i
       class="fas fa-user-circle"
@@ -135,8 +137,8 @@
             Sorting
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <a class="nav-panel-link" routerLink="bubble-sort" (click)="showPanel()">Bubble Sort</a><br/><br/>
-        <a class="nav-panel-link">Selection Sort</a>
+        <a class="nav-panel-link" routerLink="bubble-sort" (click)="panelState = false">Bubble Sort</a><br/><br/>
+        <a class="nav-panel-link" routerLink="selection-sort" (click)="panelState = false">Selection Sort</a>
       </mat-expansion-panel>
       <mat-expansion-panel class="mat-elevation-z0">
         <mat-expansion-panel-header>
@@ -144,7 +146,7 @@
             Recursion
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <a class="nav-panel-link">Stacks</a><br/><br/>
+        <a class="nav-panel-link" routerLink="string-reversal" (click)="panelState = false">String Reversal</a><br/><br/>
         <a class="nav-panel-link">Queues</a>
       </mat-expansion-panel>
     </mat-expansion-panel>

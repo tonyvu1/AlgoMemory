@@ -2,31 +2,6 @@
   <div class="row" [ngStyle]="{ marginTop: '2rem' }">
     <div class="col-xs-12 col-sm-12 col-md-1"></div>
 
-    <ng-template [ngIf]="running" [ngIfElse]="readOnlyText">
-      <textarea
-        placeholder="Type code..."
-        class="col-xs-12 col-sm-12 col-md-5 answer"
-        [(ngModel)]="answer"
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-        spellcheck="false"
-      ></textarea>
-    </ng-template>
-
-    <ng-template #readOnlyText>
-      <textarea
-        placeholder="Press start to begin..."
-        class="col-xs-12 col-sm-12 col-md-5 answer"
-        [(ngModel)]="answer"
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-        spellcheck="false"
-        readonly="true"
-      ></textarea>
-    </ng-template>
-
     <div class="col-xs-12 col-sm-12 col-md-5 control-panel">
       <div class="solution">
         <!-- Place custom code here-->
@@ -132,6 +107,31 @@
         </button>
       </div>
     </div>
+
+    <ng-template [ngIf]="running" [ngIfElse]="readOnlyText">
+      <textarea
+        placeholder="Type code..."
+        class="col-xs-12 col-sm-12 col-md-5 answer"
+        [(ngModel)]="answer"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      ></textarea>
+    </ng-template>
+
+    <ng-template #readOnlyText>
+      <textarea
+        placeholder="Press start to begin..."
+        class="col-xs-12 col-sm-12 col-md-5 answer"
+        [(ngModel)]="answer"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        readonly="true"
+      ></textarea>
+    </ng-template>
     <div class="col-xs-12 col-sm-12 col-md-1"></div>
   </div>
 </div>
