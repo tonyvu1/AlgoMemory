@@ -7,7 +7,7 @@ import 'rxjs/Rx';
 })
 export class UserDataService {
   // Make empty for production http://localhost:5000
-  private serverURL = "http://localhost:5000";
+  private serverURL = "";
 
   constructor(private http: Http) { }
 
