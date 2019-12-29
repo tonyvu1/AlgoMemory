@@ -1243,7 +1243,7 @@ let UserDataService = class UserDataService {
     constructor(http) {
         this.http = http;
         // Make empty for production http://localhost:5000
-        this.serverURL = "http://localhost:5000";
+        this.serverURL = "";
     }
     getUsers() {
         return this.http.get(this.serverURL + "/users").map(res => res.json());

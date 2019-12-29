@@ -2199,7 +2199,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.http = http; // Make empty for production http://localhost:5000
 
-        this.serverURL = "http://localhost:5000";
+        this.serverURL = "";
       }
 
       _createClass(UserDataService, [{
