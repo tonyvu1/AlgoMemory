@@ -10,10 +10,11 @@ import { Globals } from '../../globals';
 export class NavComponent {
   globals: Globals;
   handSetState: boolean;
+  panelState: boolean;
 
     ngOnInit() {
       this.breakpointObserver
-      .observe(['(min-width: 600px)'])
+      .observe(['(min-width: 800px)'])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.handSetState = false;
@@ -27,4 +28,7 @@ export class NavComponent {
     this.globals = globals;
   }
 
+  showPanel() {
+    this.panelState = !this.panelState;
+  }
 }
