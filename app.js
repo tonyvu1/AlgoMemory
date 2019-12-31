@@ -22,6 +22,42 @@ connection.once("open", () => {
   console.log("MongoDb connected.");
 });
 
+/******************** FORCE HTTPS (UNCOMMENT WHEN DEPLOY) *********************/
+
+app.use((req, res, next) => {
+  if (req.header("x-forwarded-proto") !== "https") {
+    res.redirect(`https://${req.header("host")}${req.url}`);
+  } else {
+    next();
+  }
+});
+app.use(express.static("build"));
+app.use(function(req, res, next) {
+  var sslUrl;
+
+  if (
+    process.env.NODE_ENV === "production" &&
+    req.headers["x-forwarded-proto"] !== "https"
+  ) {
+    sslUrl = ["https://b1nari.herokuapp.com/", req.url].join("");
+    return res.redirect(sslUrl);
+  }
+
+  return next();
+});
+var https_redirect = function(req, res, next) {
+  if (process.env.NODE_ENV === "production") {
+    if (req.headers["x-forwarded-proto"] != "https") {
+      return res.redirect("https://" + req.headers.host + req.url);
+    } else {
+      return next();
+    }
+  } else {
+    return next();
+  }
+};
+app.use(https_redirect);
+
 app.use(cors());
 app.use(express.json());
 
