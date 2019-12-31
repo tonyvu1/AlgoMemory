@@ -19,4 +19,3 @@ $(document).delegate('.answer', 'keydown', function(e) {
 
   
 ;
-//# sourceMappingURL=scripts.js.map
