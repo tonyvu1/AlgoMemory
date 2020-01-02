@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState  } from '@angular/cdk/layout';
 import { Globals } from '../../globals';
+import {AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-nav',
@@ -25,7 +26,7 @@ export class NavComponent {
       });
     }
     
-  constructor(private breakpointObserver: BreakpointObserver, globals: Globals) {
+  constructor(private breakpointObserver: BreakpointObserver, globals: Globals, public auth: AuthService) {
     this.globals = globals;
   }
 
