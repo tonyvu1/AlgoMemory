@@ -29,7 +29,7 @@ export class SelectionSortComponent implements OnInit {
 
   // Change solution based on problem
   solution: string =
-    'functionsort(arr){for(vari=0;i<arr.length;i++){for(varj=0;j<arr.length-1;j++){if(arr[j]>arr[j+1]){vartemp=arr[j];arr[j]=arr[j+1];arr[j+1]=temp;}}}}';
+    'functionsort(arr){varselected;for(vari=0;i<arr.length-1;i++){selected=i;varmin=arr[selected];for(varj=i;j<arr.length-1;j++){if(min>arr[j+1]){min=arr[j+1];selected=j+1;}}if(i!=selected){vartemp=arr[i];arr[i]=arr[selected];arr[selected]=temp;}}}';
 
   constructor(globals: Globals) {
     globals.title = "Recursion";
