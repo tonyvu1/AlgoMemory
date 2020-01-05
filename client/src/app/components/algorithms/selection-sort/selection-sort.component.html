@@ -8,12 +8,13 @@
         <div *ngIf="!running" [@hide]>
           <p>
             function sort(arr) &#123;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var selected;<br /><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var selected;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var min;<br /><br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i < arr.length - 1;
             i++) &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selected
-            = i;<br /><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var min
+            = i;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min
             = arr[selected];<br /><br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var
             j = i; j < arr.length - 1; j++) &#123;<br />
