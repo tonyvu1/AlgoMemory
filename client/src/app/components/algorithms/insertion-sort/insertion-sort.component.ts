@@ -3,9 +3,9 @@ import { Globals } from "../../../globals";
 import { trigger, transition, animate, style } from "@angular/animations";
 
 @Component({
-  selector: "app-selection-sort",
-  templateUrl: "./selection-sort.component.html",
-  styleUrls: ["./selection-sort.component.scss"],
+  selector: "app-insertion-sort",
+  templateUrl: "./insertion-sort.component.html",
+  styleUrls: ["./insertion-sort.component.scss"],
   animations: [
     trigger("hide", [
       transition(":enter", [
@@ -16,7 +16,7 @@ import { trigger, transition, animate, style } from "@angular/animations";
     ])
   ]
 })
-export class SelectionSortComponent implements OnInit {
+export class InsertionSortComponent implements OnInit {
   running: boolean = false;
   outcome: string = " ";
   answerNoSpaces: string = "";
@@ -29,7 +29,7 @@ export class SelectionSortComponent implements OnInit {
 
   // Change solution based on problem
   solution: string =
-    'functionsort(arr){varselected;varmin;for(vari=0;i<arr.length-1;i++){selected=i;min=arr[selected];for(varj=i;j<arr.length-1;j++){if(min>arr[j+1]){min=arr[j+1];selected=j+1;}}if(i!=selected){vartemp=arr[i];arr[i]=arr[selected];arr[selected]=temp;}}}';
+    'functionsort(arr){for(vari=0;i<arr.length;i++){for(varj=0;j<arr.length-1;j++){if(arr[j]>arr[j+1]){vartemp=arr[j];arr[j]=arr[j+1];arr[j+1]=temp;}}}}';
 
   constructor(globals: Globals) {
     globals.title = "Recursion";

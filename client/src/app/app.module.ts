@@ -25,9 +25,10 @@ import { StopwatchComponent } from './components/stopwatch/stopwatch.component';
 import { BubbleSortComponent } from './components/algorithms/bubble-sort/bubble-sort.component';
 import { SelectionSortComponent } from './components/algorithms/selection-sort/selection-sort.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { InsertionSortComponent } from './components/algorithms/insertion-sort/insertion-sort.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavComponent, StringReversalComponent, StopwatchComponent, BubbleSortComponent, SelectionSortComponent, ProfileComponent],
+  declarations: [AppComponent, HomeComponent, NavComponent, StringReversalComponent, StopwatchComponent, BubbleSortComponent, SelectionSortComponent, ProfileComponent, InsertionSortComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
