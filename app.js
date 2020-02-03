@@ -58,8 +58,8 @@ var https_redirect = function(req, res, next) {
 };
 app.use(https_redirect);
 
+
 app.use(cors());
-app.use(express.json());
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
